@@ -427,3 +427,23 @@ User_Number.forEach((number_field) => {
 });
 
 
+
+
+
+//? Read More and less :--
+document.querySelectorAll(".btn-read-more").forEach((link) => {
+  link.addEventListener("click", function () {
+    const hiddenItems = this.closest("ul").querySelectorAll(
+      ".show-hide-remainig"
+    );
+
+    hiddenItems.forEach((item) => {
+      // Toggle the display of the hidden items
+      item.style.display = item.style.display === "none" ? "block" : "none";
+    });
+
+    // Toggle link text
+    this.textContent =
+      this.textContent === "Read More." ? "Read Less" : "Read More.";
+  });
+});
